@@ -18,6 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = True
 
+ROOT_URLCONF = 'secure_django_app.urls'
+
 #=========================== AUTH AND SECURITY ====================================#
 
 
@@ -56,8 +58,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
-
-ROOT_URLCONF = 'secure_django_app.urls'
 
 #=========================== TEMPLATES ============================================#
 
