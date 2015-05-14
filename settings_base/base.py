@@ -22,7 +22,7 @@ ROOT_URLCONF = 'app.urls'
 
 #=========================== AUTH AND SECURITY ====================================#
 
-
+# use a different secret key in your development and production settings file
 SECRET_KEY = 'o^$k8atwc8aj_z@j&@r0ry6g%20*_$pqqyo!+hx&rlhng^^474'
 
 ALLOWED_HOSTS = []
