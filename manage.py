@@ -17,7 +17,11 @@ if __name__ == "__main__":
     # Which, we always keep in the same parent directory as the main application.
     # Thus, we have to jump up one directory from the cwd using " ../ ".
     sys.path.append(
-        os.path.abspath(os.path.join(os.path.dirname(__file__),'../secure_django_settings'))
+        os.path.abspath(
+            os.path.join(
+                os.path.dirname(__file__),'../secure_django_settings'
+            )
+        )
     )
     
     # get the name of the current host using the socket library
