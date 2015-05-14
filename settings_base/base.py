@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = True
 
-ROOT_URLCONF = 'secure_django_app.urls'
+ROOT_URLCONF = 'app.urls'
 
 #=========================== AUTH AND SECURITY ====================================#
 
@@ -79,7 +79,7 @@ TEMPLATES = [
 
 #=========================== WSGI =================================================#
 
-WSGI_APPLICATION = 'secure_django_app.wsgi.application'
+WSGI_APPLICATION = 'wsgi.wsgi.application'
 
 #=========================== INTERNATIONALIZATION =================================#
 
