@@ -10,25 +10,31 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+#=========================== BASIC STUFF ==========================================#
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o^$k8atwc8aj_z@j&@r0ry6g%20*_$pqqyo!+hx&rlhng^^474'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+#=========================== AUTH AND SECURITY ====================================#
+
+
+SECRET_KEY = 'o^$k8atwc8aj_z@j&@r0ry6g%20*_$pqqyo!+hx&rlhng^^474'
 
 ALLOWED_HOSTS = []
 
+#=========================== DATABASE =============================================#
 
-# Application definition
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+#=========================== APPLICATIONS =========================================#
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -38,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
+#=========================== MIDDLEWARE ===========================================#
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +58,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'secure_django_app.urls'
+
+#=========================== TEMPLATES ============================================#
 
 TEMPLATES = [
     {
@@ -68,22 +77,11 @@ TEMPLATES = [
     },
 ]
 
+#=========================== WSGI =================================================#
+
 WSGI_APPLICATION = 'secure_django_app.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
+#=========================== INTERNATIONALIZATION =================================#
 
 LANGUAGE_CODE = 'en-us'
 
@@ -96,7 +94,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
+#=========================== STATIC FILES =========================================#
 
 STATIC_URL = '/static/'
